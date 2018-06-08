@@ -139,89 +139,99 @@
 
       // "if" condition does not work, so it pushes to "secondNumber"; 
       button1.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(1);
+        if (operator.html() == "") {
+          firstNumber.append(1);
         } else {
-          secondNumber.html(1);
+          secondNumber.append(1);
         }
       });
       button2.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(2);
+        if (operator.html() === "") {
+          firstNumber.append(2);
         } else {
-          secondNumber.html(2);
+          secondNumber.append(2);
         }
       });
       button3.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(3);
+        if (operator.html() === "") {
+          firstNumber.append(3);
         } else {
-          secondNumber.html(3);
+          secondNumber.append(3);
         }
       });
       button4.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(4);
+        if (operator.html() === "") {
+          firstNumber.append(4);
         } else {
-          secondNumber.html(4);
+          secondNumber.append(4);
         }
       });
       button5.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(5);
+        if (operator.html() === "") {
+          firstNumber.append(5);
         } else {
-          secondNumber.html(5);
+          secondNumber.append(5);
         }
       });
       button6.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(6);
+        if (operator.html() === "") {
+          firstNumber.append(6);
         } else {
-          secondNumber.html(6);
+          secondNumber.append(6);
         }
       });
       button7.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(7);
+        if (operator.html() === "") {
+          firstNumber.append(7);
         } else {
-          secondNumber.html(7);
+          secondNumber.append(7);
         }
       });
       button8.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(8);
+        if (operator.html() === "") {
+          firstNumber.append(8);
         } else {
-          secondNumber.html(8);
+          secondNumber.append(8);
         }
       });
       button9.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(9);
+        if (operator.html() === "") {
+          firstNumber.append(9);
         } else {
-          secondNumber.html(9);
+          secondNumber.append(9);
         }
       });
       button0.on("click", function () {
-        if (firstNumber.html() === "") {
-          firstNumber.html(0);
+        if (operator.html() === "") {
+          firstNumber.append(0);
         } else {
-          secondNumber.html(0);
+          secondNumber.append(0);
         }
       });
       buttonPlus.on("click", function () {
-        operator.html("+");
+        if (firstNumber.html() !== "") {
+          operator.html("+");
+        }
       });
       buttonMinus.on("click", function () {
-        operator.html("-");
+        if (firstNumber.html() !== "") {
+          operator.html("-");
+        }
       });
       buttonMultiply.on("click", function () {
-        operator.html("*");
+        if (firstNumber.html() !== "") {
+          operator.html("*");
+        }
       });
       buttonDivide.on("click", function () {
-        operator.html("/");
+        if (firstNumber.html() !== "") {
+          operator.html("/");
+        }
       });
       buttonPower.on("click", function () {
-        operator.html("^");
+        if (firstNumber.html() !== "") {
+          operator.html("^");
+        }
       });
       buttonEqual.on("click", function () {
         
