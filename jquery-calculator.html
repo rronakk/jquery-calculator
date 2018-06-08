@@ -117,9 +117,9 @@ document.addEventListener('keyup',(event)=>{
   if(task[0]==="")
   {
     if(event.keyCode>=48 && event.keyCode<=57)
-      task[0] = event.key;
+      task[0] += event.key;
   } else if(event.keyCode>=48 && event.keyCode<=57 && event.key !=='*' && event.key !=='^') {
-    task[2]=event.key;
+    task[2]+=event.key;
   }
   if(event.key==='+' || event.key==='-' || event.key==='/' || event.key==='*' || event.key==='^') 
     task[1] =  event.key;
