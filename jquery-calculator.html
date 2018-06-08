@@ -72,13 +72,82 @@
 
 <script type="text/javascript">
 
+/////keyboard events////////////////////////////
 $(document).ready(function() {
+var first,second, result, operator, task = [];
+first = document.getElementById("first-number");
+operator = document.getElementById("operator");
+second = document.getElementById("second-number");
+result = document.getElementById("result");
 
 // Your code here...
+task[0]="";
+//add
+function add(a, b)
+{
+  return((parseInt(a))+parseInt(b));
+}
+function substract(a,b)
+{
+  return((parseInt(a))-parseInt(b));
+}
+function divide(a,b)
+{
+
+  return (parseFloat(a)/parseFloat(b));
+}
+function times(a,b)
+{
+  return((parseInt(a)) * parseInt(b));
+}
+function exp(a,b)
+{
+  return Math.pow((parseInt(a)),(parseInt(b)));
+}
+function clear()
+{
+  $("#first-number").empty();
+  $("#second-number").empty();
+  $("#operator").empty();
+  $("#result").empty();
+  task[0]=""; task[1]=""; task[2]="";
+}
+document.addEventListener('keyup',(event)=>{
+  ///////////////////////////////recording keystrokes
+  if(task[0]==="")
+  {
+    if(event.keyCode>=48 && event.keyCode<=57)
+      task[0] = event.key;
+  } else if(event.keyCode>=48 && event.keyCode<=57 && event.key !=='*' && event.key !=='^') {
+    task[2]=event.key;
+  }
+  if(event.key==='+' || event.key==='-' || event.key==='/' || event.key==='*' || event.key==='^') 
+    task[1] =  event.key;
+  first.textContent = task[0];
+  operator.textContent = task[1];
+  second.textContent = task[2];
+///////////generating results////////////
+  if(event.keyCode===13)
+  {
+    if(task[1]==='-')
+      result.textContent = substract(task[0],task[2]);
+    if(task[1]==='+')
+      result.textContent = add(task[0],task[2]);
+    if(task[1]==='/')
+      result.textContent = divide(task[0],task[2]);
+    if(task[1]==='*')
+      result.textContent = times(task[0],task[2]);
+    if(task[1]==='^')
+      result.textContent = exp(task[0],task[2]);
+  }
+//////////clear
+  if(event.keyCode===8)
+    clear();
+});
 
 
 });
-
+/////keyboard events////////////////////////////
 </script>
 
 </body>
